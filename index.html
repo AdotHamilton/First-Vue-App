@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app">
+        <h1>{{ name }}'s things to learn</h1>
+        <ul> 
+            <h1 v-if="header1">Tech</h1>
+            <li v-for="thing in tech" >{{ thing }}</li>
+            <p v-if="tech.length >= 2">2+ items...</p>
+        </ul>
+        <ul>
+            <h1 v-if="header2">Financial</h1>
+            <li v-for="(thing, idx) in financial" v-if="idx % 2 == 0">{{ thing }}</li>
+            <p>Exactly {{ financial.length }} items</p>
+        </ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
